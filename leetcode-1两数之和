@@ -1,0 +1,37 @@
+1. 两数之和
+给定一个整数数组和一个目标值，找出数组中和为目标值的两个数。
+
+你可以假设每个输入只对应一种答案，且同样的元素不能被重复利用。
+
+示例:
+
+给定 nums = [2, 7, 11, 15], target = 9
+
+因为 nums[0] + nums[1] = 2 + 7 = 9
+所以返回 [0, 1]
+解法一 暴力破解
+时间复杂度o(n2),用时130ms.
+class Solution {
+   public int[] twoSum(int[] nums,int target){
+         int[] result = new int[2];
+         for (int i=0;i<nums.length;i++){
+             for (int j=i+1;j<nums.length;j++){
+                 if (target==nums[i]+nums[j]){
+                     result[0]=i;
+                     result[1]=j;
+                     System.out.println("["+i+","+j+"]");
+
+                 }
+             }
+         }
+         return  result;
+     }
+
+    public static void main(String[] args) {
+        Solution lt = new Solution();
+        int[] numstest={2,7,11,15};
+        int t = 9;
+        lt.twoSum(numstest,t );
+    
+}
+}
